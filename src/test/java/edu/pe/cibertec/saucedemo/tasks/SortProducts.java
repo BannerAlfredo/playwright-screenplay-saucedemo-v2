@@ -9,10 +9,10 @@ import net.serenitybdd.screenplay.playwright.interactions.SelectFromOptions;
 public class SortProducts {
 
     public static Performable by(String sortOperation) {
-        return Task.where("{0} sorts prodcuts by '" + sortOperation + "'",
+        return Task.where("{0} sorts products by '" + sortOperation + "'",
                 SelectFromOptions.byVisibleText(sortOperation)
-                        .from(Target.the("").locatedBy(InventoryPage.ORDER_PRODUCT_SELECT))
-
+                        .from(Target.the("sort dropdown")
+                                .locatedBy(InventoryPage.ORDER_PRODUCT_SELECT))
         );
     }
 
